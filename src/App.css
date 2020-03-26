@@ -1,0 +1,65 @@
+.ItemContainer{
+  background-color: brown;
+  height: 250px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  float: left;
+  margin-left: 2.5%;
+  overflow: hidden;
+  position: relative;
+}
+.titleContainer{
+  background-color: white;
+  height: 100px;
+  width: 150px;
+  margin-top: 75px;
+  position: absolute;
+}
+
+.titleContainer h1{
+  text-align: center;
+}
+.titleContainerLarge h1{
+  text-align: center;
+}
+.ItemContainerLarge{
+  background-color: brown;
+  height:320px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  float: left;
+  margin-left: 8%;
+  overflow: hidden;
+  position: relative;
+}
+
+.titleContainerLarge{
+  background-color: white;
+  height: 100px;
+  width: 150px;
+  margin-top: 110px;
+  position: absolute;
+}
+
+.backgorund-Image{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ItemContainer :hover{
+  cursor: pointer;
+  transform: scale(1.2) ;
+  transition: all 5s;
+  
+}
+
+.ItemContainerLarge :hover{
+  cursor: pointer;
+  transform: scale(1.2) ;
+  transition: all 5s;
+}
