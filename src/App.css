@@ -63,3 +63,55 @@
   transform: scale(1.2) ;
   transition: all 5s;
 }
+
+.CollectionItem{
+  width:20%;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 4%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.image{
+  width: 100%;
+  height: 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image-footer{
+  width:95%;
+  height: 10%;
+  justify-content: space-between;
+  display: flex;
+}
+.name{
+  width:87%;
+}
+.CollectionItem:hover{
+  cursor: pointer;
+  transform: scale(1.2) ;
+  transition: all 5s;
+  opacity: 0.6;
+}
+
+.options{
+  width:90%;
+  height: 100%;;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+a{
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 45px;
+  margin-top: 35px;
+}
+

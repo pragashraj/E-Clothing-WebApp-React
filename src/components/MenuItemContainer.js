@@ -1,16 +1,14 @@
 import React from 'react'
-import clothes from '../images/clothes.jpeg'
-import cloth from '../images/cloth.jpg'
+import women from '../images/women.jpg'
 
 const MenuItemContainer=(props)=>{
-
     if(props.size==="large"){
         return(
             <div className='ItemContainerLarge'>
                 <div className="backgorund-Image"
                     style={
                         {
-                            backgroundImage: `url(${clothes})`
+                            backgroundImage: `url(${women})`
                         }
                     }
                 />
@@ -27,7 +25,7 @@ const MenuItemContainer=(props)=>{
             <div className="backgorund-Image"
             style={
                 {
-                    backgroundImage: `url(${cloth})`
+                    backgroundImage: `url(${women})`
                 }
             }
         />
