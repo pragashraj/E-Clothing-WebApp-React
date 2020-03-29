@@ -115,3 +115,36 @@ a{
   margin-top: 35px;
 }
 
+.SignIn{
+  margin-top: 10%;
+  margin-left: 10%;
+  width:40%;
+}
+.inputFields{
+  margin-top: 6%;
+}
+input{
+  width:80%;
+  height:20px;
+}
+
+.CustomButton{
+  width: 30%;
+  height: 55px;
+  background-color: black;
+  color: white;
+  font-size: large;
+}
+
+.inputButton{
+  margin-top: 6%;
+
+}
+
+.inputButton :hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: 1px solid black;
+  opacity: 0.8;
+}

@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import CustomButton from './CustomButton'
 
 class SignIn extends Component{
     state={
@@ -24,13 +25,20 @@ class SignIn extends Component{
                 <h2>I Already Have an Account</h2>
                 <span>sign in with email and password</span>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email</label>
-                    <input name='email' type='email' value={this.state.email} required onChange={this.handleChange}/>
-
-                    <label>Password</label>
-                    <input name='password' type='password' value={this.state.password} required  onChange={this.handleChange}/>
-
-                    <input type="submit" value="Submit"/>
+                    <div className="inputFields">
+                        <label>Email</label><br></br><br></br>
+                        <input name='email' type='email' value={this.state.email} required onChange={this.handleChange}/><br></br>
+                    </div>
+                    
+                    <div className="inputFields">
+                        <label>Password</label><br></br><br></br>
+                        <input name='password' type='password' value={this.state.password} required  onChange={this.handleChange}/><br></br>
+                    </div>
+                    
+                    <div className="inputButton">
+                        <CustomButton type="submit" value="Submit">Sign In</CustomButton>
+                    </div>
+                    
                 </form>
             </div>
         )
