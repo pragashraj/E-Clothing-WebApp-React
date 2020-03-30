@@ -107,6 +107,9 @@
   align-items: center;
   justify-content: flex-end;
 }
+.options :hover{
+  color:black;
+}
 
 a{
   text-decoration: none;
@@ -134,11 +137,13 @@ input{
   background-color: black;
   color: white;
   font-size: large;
+  float: left;
+  margin-right: 55px;
+  margin-top: 6%;
 }
 
 .inputButton{
   margin-top: 6%;
-
 }
 
 .inputButton :hover{
@@ -146,5 +151,16 @@ input{
   color: black;
   cursor: pointer;
   border: 1px solid black;
-  opacity: 0.8;
+  opacity: 0.6;
+}
+
+.CustomButtonGoogle{
+  width: 30%;
+  height: 55px;
+  background-color: lightseagreen;
+  color: white;
+  font-size: large;
+  float: left;
+  margin-right: 55px;
+  margin-top: 6%;
 }

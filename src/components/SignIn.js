@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import CustomButton from './CustomButton'
+import {signInWithGoogle} from './Firebase'
 
 class SignIn extends Component{
     state={
@@ -37,6 +38,10 @@ class SignIn extends Component{
                     
                     <div className="inputButton">
                         <CustomButton type="submit" value="Submit">Sign In</CustomButton>
+                    </div>
+
+                    <div className="inputButton">
+                        <CustomButton onClick={signInWithGoogle} isGoogle>Sign In with Google</CustomButton>
                     </div>
                     
                 </form>
