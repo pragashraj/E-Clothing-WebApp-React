@@ -119,9 +119,10 @@ a{
 }
 
 .SignIn{
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 10%;
-  width:40%;
+  width:35%;
+  float: left;
 }
 .inputFields{
   margin-top: 6%;
@@ -138,7 +139,7 @@ input{
   color: white;
   font-size: large;
   float: left;
-  margin-right: 55px;
+  margin-right: 40px;
   margin-top: 6%;
 }
 
@@ -161,6 +162,13 @@ input{
   color: white;
   font-size: large;
   float: left;
-  margin-right: 55px;
+  /* margin-right: 45px; */
   margin-top: 6%;
+}
+
+.SignUp{
+  margin-top: 5%;
+  margin-left: 10%;
+  width:35%;
+  float: left;
 }

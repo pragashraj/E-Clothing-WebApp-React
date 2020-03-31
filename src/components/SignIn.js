@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import CustomButton from './CustomButton'
-import {signInWithGoogle} from './Firebase'
+import {auth,signInWithGoogle} from './Firebase'
 
 class SignIn extends Component{
     state={
@@ -8,9 +8,19 @@ class SignIn extends Component{
         password:''
     }
 
-    handleSubmit=(e)=>{
+    handleSubmit=async e=>{
         e.preventDefault();
-        console.log(this.state.email,this.state.password);
+        const {email,password}=this.state
+        try{
+            await auth.signInWithEmailAndPassword(email,password)
+            this.setState({
+                email:'',
+                password:''
+            })
+        }catch(e){
+            console.log(e);
+        }
+    
     }
 
     handleChange=(e)=>{
