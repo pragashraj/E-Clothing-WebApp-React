@@ -11,7 +11,7 @@ const NavBar =({currentUser})=>{
                 
                 {
                     currentUser ?
-                    <div className="options" onClick={()=>auth.signOut()}>SIGN-OUT</div>
+                    <Link onClick={()=>auth.signOut()}>SIGN-OUT</Link>
                     :
                     <Link to="/SignIn">SIGN-IN</Link>
                 }

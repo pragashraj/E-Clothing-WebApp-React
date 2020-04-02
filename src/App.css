@@ -110,6 +110,14 @@
 .options :hover{
   color:black;
 }
+.signOutoption{
+  color: purple;
+  width: 10%;
+  height: 100%;;
+  display: flex;
+  align-items: center;
+ background-color: aqua;
+}
 
 a{
   text-decoration: none;
