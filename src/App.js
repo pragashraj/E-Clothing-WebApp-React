@@ -2,36 +2,34 @@ import React ,{Component} from 'react';
 import './App.css';
 import Home from './components/Home'
 import shopPage from './components/shopPage'
-import {Route,Switch,BrowserRouter} from 'react-router-dom'
+import {Route,Switch,BrowserRouter,Redirect} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import SignInPage from './components/SignInPage'
 import {auth,createUserProfileDocument} from './components/Firebase'
+import {connect} from 'react-redux'
+import {setCurrentUser} from './components/Redux/userAction'
 
 class App extends Component {
-  state={
-    currentUser:null
-  }
 
   unsubscribeFromAuth=null;
-
   componentDidMount() {
+    const {setCurrentUser}=this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        // userRef.onSnapshot(snapShot => {
-        //   this.setState({
-        //     currentUser: {
-        //       id: snapShot.id,
-        //       ...snapShot.data()
-        //     }
-        //   });
-        //});
-        console.log(userRef)
-      }
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          });
+        });
 
-      this.setState({ currentUser: userAuth });
+      }
+      setCurrentUser(userAuth);
     });
+
   }
 
   componentWillUnmount(){
@@ -42,11 +40,15 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div className="App">
-          <NavBar currentUser={this.state.currentUser}/>
+          <NavBar />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route  path="/shop" component={shopPage}/>
-            <Route  path="/SignIn" component={SignInPage}/>
+            <Route  path="/SignIn" 
+                    render={()=>
+                      this.props.currentUser ? (<Redirect to='/'/>):(<SignInPage/>)
+                    }
+            />
           </Switch>
       </div>
       </BrowserRouter>
@@ -54,4 +56,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps=({user})=>({
+  currentUser:user.currentUser
+})
+
+const mapDispatchToProps=dispatch=>({
+  setCurrentUser:user=>dispatch(setCurrentUser(user))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

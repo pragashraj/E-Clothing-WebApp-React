@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {auth} from './Firebase'
+import {connect} from 'react-redux'
+import CartIcon from './Cart'
 
 const NavBar =({currentUser})=>{
     return(
@@ -15,9 +17,14 @@ const NavBar =({currentUser})=>{
                     :
                     <Link to="/SignIn">SIGN-IN</Link>
                 }
+
+                <CartIcon/>
             </div>
         </div>
     )
 }
+const mapStateToProps=state=>({
+    currentUser:state.user.userReducer
+})
 
-export default NavBar
+export default connect(mapStateToProps)(NavBar)
