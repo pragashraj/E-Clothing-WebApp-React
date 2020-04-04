@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 import {auth} from './Firebase'
 import {connect} from 'react-redux'
 import CartIcon from './Cart'
-
-const NavBar =({currentUser})=>{
+import CartDropDown from './CartDropDown'
+const NavBar =({currentUser,hidden})=>{
     return(
         <div className="NavBar">
             <div className="options">
@@ -20,11 +20,16 @@ const NavBar =({currentUser})=>{
 
                 <CartIcon/>
             </div>
+            {
+                hidden ? null :<CartDropDown/>
+            }
+            
         </div>
     )
 }
-const mapStateToProps=state=>({
-    currentUser:state.user.userReducer
+const mapStateToProps=({user:{currentUser},cart:{hidden}})=>({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(NavBar)

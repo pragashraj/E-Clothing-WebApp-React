@@ -93,12 +93,12 @@
 .name{
   width:87%;
 }
-.CollectionItem:hover{
+/* .CollectionItem:hover{
   cursor: pointer;
-  transform: scale(1.2) ;
+   transform: scale(1.2) ;
   transition: all 5s;
-  opacity: 0.6;
-}
+  opacity: 0.6; 
+} */
 
 .options{
   width:90%;
@@ -188,3 +188,54 @@ input{
   height: 30px;
   width: 30px;
 }
+.Cart-icon{
+  cursor: pointer;
+}
+
+.cart-dropDown{
+  position: absolute;
+  width:240px;
+  height: 340px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+  top: 80px;
+  right: 0;
+  margin-right: 25px;
+  /* overflow: scroll; */
+}
+.cart-item{
+  height: 240px;
+  width: auto;
+}
+
+.cart-btn{
+  width: 100%;
+  height: 55px;
+  background-color: black;
+  color: white;
+  font-size: large;
+  float: left;
+  margin-right: 40px;
+  margin-top: 6%;
+  cursor: pointer;
+}
+.cart-div :hover{
+  background-color: white;
+  color: black;
+  opacity: 0.8;
+}
+
+.Add-cart-btn{
+  width: 80%;
+  height: 55px;
+  background-color:rgb(253, 253, 253);
+  color: black;
+  font-size: large;
+  margin-top: 80%;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
