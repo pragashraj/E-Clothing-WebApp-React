@@ -3,8 +3,8 @@ import women from '../images/women.jpg'
 import {connect} from 'react-redux'
 import {addItem} from './Redux/cartAction'
 
-const CollectionItem=({items,addItem})=>{
-    const {name,price,imageUrl}=items;
+const CollectionItem=({item,addItem})=>{
+    const {name,price}=item;
     return(
         <div className="CollectionItem">
             <div className="image" 
@@ -15,7 +15,7 @@ const CollectionItem=({items,addItem})=>{
                 }
 
             >
-            <div className="cart-div"><button className="Add-cart-btn" onClick={()=>addItem(items)}>Add To Cart</button></div>
+            <div className="cart-div"><button className="Add-cart-btn" onClick={()=>addItem(item)}>Add To Cart</button></div>
             </div>
 
             <div className="image-footer">
@@ -28,8 +28,8 @@ const CollectionItem=({items,addItem})=>{
     )
 }
 
-const mapDispatchToProps=dispatch=>({
-    addItem:item=>dispatch(addItem(item))
-})
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+  });
 
 export default connect(null,mapDispatchToProps)(CollectionItem)
