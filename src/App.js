@@ -1,10 +1,14 @@
 import React ,{Component} from 'react';
 import './App.css';
+
 import Home from './components/Home'
 import shopPage from './components/shopPage'
+import SignInPage from './components/SignInPage'
+import CheckoutPage from './components/ChekoutPage'
+
 import {Route,Switch,BrowserRouter,Redirect} from 'react-router-dom'
 import NavBar from './components/NavBar'
-import SignInPage from './components/SignInPage'
+
 import {auth,createUserProfileDocument} from './components/Firebase'
 import {connect} from 'react-redux'
 import {setCurrentUser} from './components/Redux/userAction'
@@ -18,15 +22,15 @@ class App extends Component {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-
         // userRef.onSnapshot(snapShot => {
         //   setCurrentUser({
         //     id: snapShot.id,
         //     ...snapShot.data()
         //   });
         // });
-
+        setCurrentUser(userAuth);
       }
+
       setCurrentUser(userAuth);
     });
 
@@ -49,6 +53,8 @@ class App extends Component {
                       this.props.currentUser ? (<Redirect to='/'/>):(<SignInPage/>)
                     }
             />
+
+            <Route exact path="/checkout" component={CheckoutPage}/>
           </Switch>
       </div>
       </BrowserRouter>

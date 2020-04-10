@@ -1,15 +1,7 @@
 import {addItemToCart} from './cart.utils'
 const INITIAL_STATE={
     hidden:true,
-    cartItems:[
-        {
-            id: 1,
-            name: 'Brown Brim',
-            imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-            price: 25,
-            quantity:1
-        }
-    ]
+    item:[]
 };
 
 const cartreducer=(state=INITIAL_STATE,action)=>{
@@ -20,10 +12,10 @@ const cartreducer=(state=INITIAL_STATE,action)=>{
                 hidden:!state.hidden
             }
         
-        case 'ADD_ITEM':
+        case "ADDITEM":
             return{
                 ...state,
-                cartItems:addItemToCart(state.cartItems,action.payload)
+                item:addItemToCart(state.item,action.payload)
             }
         default:return state
     }

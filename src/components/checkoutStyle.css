@@ -1,0 +1,21 @@
+.checkout-page{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.checkout-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgray;
+}
+
+.checkout-block{
+    width: 23%;
+    text-transform: capitalize;
+}
+
+.last-block{
+    width: 8%;
+    text-transform: capitalize;
+}

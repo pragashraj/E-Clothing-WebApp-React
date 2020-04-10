@@ -209,8 +209,8 @@ input{
 .cart-items{
   height: 240px;
   width: auto;
-  background-color: aqua;
   padding: 5px;
+  overflow:scroll
 }
 
 .cart-btn{
@@ -242,19 +242,24 @@ input{
 }
 
 .cart-item{
-  background-color: blue;
   height: 40%;
   overflow: hidden;
   position: relative;
+  margin-top: 10px;
 }
 .cart-image{
-  height: 80%;
+  height: 75%;
   background-color: brown;
 }
 .item-details{
-  height: 20%;
-  background-color: yellowgreen;
+  height: 25%;
+  margin-left: 5px;
 }
 .price{
   margin-left: 20%;
+}
+
+.empty-message{
+  font-size: 20px;
+  margin-left: 25%;
 }
