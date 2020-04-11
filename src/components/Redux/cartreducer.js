@@ -17,6 +17,13 @@ const cartreducer=(state=INITIAL_STATE,action)=>{
                 ...state,
                 item:addItemToCart(state.item,action.payload)
             }
+
+        case "REMOVEITEM":
+            return{
+                ...state,
+                item:state.item.filter(item=>item.id !== action.payload.id)
+            }
+
         default:return state
     }
 }

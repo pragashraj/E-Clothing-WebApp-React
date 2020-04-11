@@ -19,3 +19,37 @@
     width: 8%;
     text-transform: capitalize;
 }
+
+.checkout-item{
+    border-bottom: 1px solid grey;
+    align-items: center;
+    display: flex;
+    padding: 8px;
+}
+
+.total{
+    font-size: 25px;
+    padding: 5px;
+}
+
+.image-container{
+    width: 20%;
+    height: 150px;
+    position: static;
+    overflow: hidden;
+    float: left;    
+}
+
+.field{
+    width: 20%;
+    float: left;
+    padding: 7px;
+    padding-left: 25px;
+   
+}
+
+.remove-btn{
+    width: 2%;
+    cursor: pointer;
+    margin-left: 25px;
+}
