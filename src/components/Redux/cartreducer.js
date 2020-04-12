@@ -1,4 +1,4 @@
-import {addItemToCart} from './cart.utils'
+import {addItemToCart,removeSingleItem} from './cart.utils'
 const INITIAL_STATE={
     hidden:true,
     item:[]
@@ -22,6 +22,12 @@ const cartreducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 item:state.item.filter(item=>item.id !== action.payload.id)
+            }
+
+        case "REMOVESINGLEITEM":
+            return{
+                ...state,
+                item:removeSingleItem(state.item,action.payload)
             }
 
         default:return state

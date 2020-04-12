@@ -16,3 +16,11 @@ export const removeCartItem = item =>{
         payload:item
     }
 }
+
+
+export const removeSingleItem=item=>{
+    return{
+        type:"REMOVESINGLEITEM",
+        payload:item
+    }
+}
